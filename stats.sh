@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 if [ $# -lt 1 ]; then
 echo "usage: ./stats.sh project_name file_type[java, sh, js, yml, etc] [-V verbose] [-N no blank lines] "
 exit
