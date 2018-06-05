@@ -6,7 +6,7 @@ exit
 fi
 
 echo "calculating..."
-for line in $(find $1 -iname "*.$2" -print0 |  xargs -0 stat -f  "%z;%N" | sort -rn)
+for line in $(find $1 ! -type l -iname "*.$2" -print0 |  xargs -0 stat -f  "%z;%N" | sort -rn)
 do  
     fileSize=$(echo $line | cut -d \; -f 1)
     fileName=$(echo $line | cut -d \; -f 2)
